@@ -1,0 +1,23 @@
+{
+  "name": "mongodb-book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JRigaldo/mongoDB-book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JRigaldo/mongoDB-book/issues"
+  },
+  "homepage": "https://github.com/JRigaldo/mongoDB-book#readme",
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "mongoose": "^5.4.7"
+  }
+}
