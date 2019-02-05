@@ -38,4 +38,12 @@ describe("Test de read", () => {
     it("Recherche un livre par son id et update(findByIdAndUpdate)", (done) => {
         assertTitle(Book.findByIdAndUpdate(book1._id, {title: newTitle}), done);
     });
+    it("Recherche son livre et incrémente son nombre de page", (done) => {
+        Book.update({title: 'Moby Dick'}, {$inc: {totalPages: 3}})
+            .then(() => Book.findOne({title: 'Moby Dick'}))
+            .then( (book) => {
+                assert(book.totalPages === 3);
+                done();
+            })
+    })
 });
