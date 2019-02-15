@@ -16,10 +16,20 @@ before((done) => {
         });
 });
 
-beforeEach('Supprime les anciens livres', (done) => {
-   const {books} = mongoose.connection.collections;
+/*
+beforeEach('Supprime les anciens livres et les utilisateurs', (done) => {
+   const {books, users} = mongoose.connection.collections;
 
-   books.drop( () => {
-       done();
+   books.drop(() => {
+       users.drop(() => {
+          done();
+       });
    });
+});
+*/
+
+beforeEach("Supprime les données", (done) => {
+    mongoose.connection.db.dropDatabase().then(() => {
+        done();
+    });
 });
